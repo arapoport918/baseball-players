@@ -2,10 +2,20 @@
 
 <ul class="team">
     <li *ngFor="let player of roster" (click)="onSelect(player)">
-        <button>
+        <button [class.selected]="player === selectedPlayer">
             <span class="number">{{player.id}}</span>
             <span class="name">{{player.name}}</span>
             <span class="position">{{player.position}}</span>
         </button>
     </li>
 </ul>
+
+<div *ngIf="selectedPlayer">
+    <h2>{{selectedPlayer.name | uppercase}} Details</h2>
+    <div>id: {{selectedPlayer.id}}</div>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" [(ngModel)]="selectedPlayer.name" placeholder="name">
+    </div>
+    <div>position: {{selectedPlayer.position}}</div>
+</div>

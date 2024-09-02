@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PLAYERS } from '../mock-players';
+import { Player } from '../player';
 
 @Component({
   selector: 'app-players',
@@ -9,4 +10,9 @@ import { PLAYERS } from '../mock-players';
 export class PlayersComponent {
 
     roster = PLAYERS;
+    selectedPlayer? : Player;
+    
+    onSelect(player : Player): void {
+      this.selectedPlayer = player;
+    }
 }

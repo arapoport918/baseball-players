@@ -1,7 +1,7 @@
-<h2>My Fantasy Baseball Team</h2>
+<h2>My Baseball Team</h2>
 
 <ul class="team">
-    <li *ngFor="let player of roster">
+    <li *ngFor="let player of roster" (click)="onSelect(player)">
         <button>
             <span class="number">{{player.id}}</span>
             <span class="name">{{player.name}}</span>

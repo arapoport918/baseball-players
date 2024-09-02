@@ -1,0 +1,11 @@
+<h2>My Fantasy Baseball Team</h2>
+
+<ul class="team">
+    <li *ngFor="let player of roster">
+        <button>
+            <span class="number">{{player.id}}</span>
+            <span class="name">{{player.name}}</span>
+            <span class="position">{{player.position}}</span>
+        </button>
+    </li>
+</ul>
